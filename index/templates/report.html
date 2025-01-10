@@ -1,0 +1,22 @@
+{% extends 'main1.html' %}
+{% block code %}
+
+
+<div class="repcontainer">
+        <h1>Patient Report</h1>
+        <div class="report-card">
+            <p><strong>Name:</strong> {{data.name }}</p>
+            <p><strong>Age:</strong> {{data.age }}</p>
+            <p><strong>Email:</strong> {{data.email }}</p>
+            <p><strong>Gender:</strong> {{data.gender }}</p>
+            <p><strong>Contact:</strong> {{data.contact }}</p>
+            <p><strong>Address:</strong> {{data.address }}</p>
+            <p><strong>Date:</strong> {{data.date }}</p>
+            <p><strong>Disease Diagnosed:</strong> {{data.disease_diagnosed }}</p>
+            <p><strong>Case Details:</strong> {{data.case_details }}</p>
+            <p><strong>Medications:</strong> {{data.medications }}</p>
+        </div>
+    </div>
+
+
+{% endblock code %}

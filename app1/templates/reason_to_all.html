@@ -1,0 +1,13 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="desc">Message to Doctor:</label>
+    <textarea id="desc" name="desc" required></textarea>
+    <button type="submit">Update</button>
+</form>
+
+<h2>Declined Appointments:</h2>
+<ul>
+    {% for decline in declines %}
+        <li>{{ decline.patient_name }} - {{ decline.disease_diagnosed }}</li>
+    {% endfor %}
+</ul>

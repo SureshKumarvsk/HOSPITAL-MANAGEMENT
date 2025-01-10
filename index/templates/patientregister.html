@@ -1,0 +1,40 @@
+{% extends 'main1.html' %}
+
+{% block code %}
+<div class="container">
+    <div class="triangle"></div>
+    <div class="text-container">
+        <h1>Welcome</h1>
+        <h3>Register Page</h3>
+        
+    </div>
+    <div class="right">
+        <div class="logincontainer">
+            <form action="" method="POST">
+                {% csrf_token %}
+               
+                <div class="key-container">
+                    <label for="key" class="key-label">Doctor ID:</label>
+                    <input type="password" name="key" id="key" placeholder="Enter the key" required>
+                </div>
+                
+                
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" placeholder="Enter username">
+                
+                <label for="email">Email Id:</label>
+                <input type="email" name="email" id="email" placeholder="xyz@gmail">
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Enter password">
+                
+                <!-- Submit Button -->
+                <input type="submit" value="Register">
+                <div class="existinguser">
+                    <a href="{% url 'loginn' %}">Existing User? login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock code %}

@@ -1,0 +1,22 @@
+{% extends 'main3.html' %}
+{% block code %}
+<div class="indcon">
+<div class="indexcontainer">
+    <h1>WELCOME TO VSK HOSPITALS</h1>
+    <div class="roles">
+        <a href="{% url 'logindoc' %}" class="role-card">
+            <h1>Doctor</h1>
+            <span>Login as Doctor</span>
+        </a>
+        <a href="{% url 'loginpat' %}" class="role-card">
+            <h1>Patient</h1>
+            <span>Login as Patient</span>
+        </a>
+        <a href="{% url 'login_staff' %}" class="role-card">
+            <h1>Staff</h1>
+            <span>Login as Staff</span>
+        </a>
+    </div>
+</div>
+</div>
+{%endblock code %}

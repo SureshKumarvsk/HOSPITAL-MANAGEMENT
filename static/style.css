@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    
+  }
+  .existinguser{
+    margin-left: 25px;
+    margin-top: 20px;
+    
+  }
+  .container {
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    border: 1px solid #000;
+  }
+  .triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: black;
+    transition: transform 0.8s, background-color 0.8s;
+    z-index: 1;
+  }
+  .container:hover .triangle {
+    transform: rotate(180deg);
+  }
+  .text-container{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    color: white;
+    transition: color 0.8s;
+  }
+  .container:hover .text-container {
+    color: black;
+  }
+  .container:hover .key-label {
+    color: black;
+  }
+
+  .text-container h1, .text-container h3 {
+    margin: 0;
+  }
+  .text-container h1 {
+    font-size: 2.5rem;
+  }
+  .text-container h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  .right {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .logincontainer {
+    margin-top: 138px;
+    text-align: left;
+  }
+  .container:hover .logincontainer {
+    color: white;
+  }
+  .logincontainer input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .logincontainer input::placeholder {
+    color:rgba(128, 128, 128, 0.795);
+  }
+  .logincontainer a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .logincontainer a:hover {
+    text-decoration: underline;
+  }
+  .logincontainer input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .logincontainer input[type="submit"]:hover {
+    background-color: #444;
+  }
+  /* Key container styles */
+.key-container {
+    position: absolute; /* Position it relative to the container */
+    top: 143px; /* Adjust to position below the "Register Page" text */
+    right:100%; /* Center horizontally */
+    transform: translateX(-50%);
+    width:100%; /* Match the width of other inputs */
+    text-align: left; 
+    margin-right: 240px;
+  }
+  
+  .key-label {
+    font-size: 1rem;
+    color: white; /* Match text-container theme */
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input#key {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f5f5f5;
+    color: #000;
+  }
+  
+
+
+/* navbar */
+nav{
+    background-color: tomato;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.title{
+    font-size: 30px;
+}
+
+.links{
+    width: 65%;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a{
+        text-decoration: none;
+        font-size: large;
+        font-weight: bolder;
+        color:whitesmoke;
+    }
+
+}
+/* addcases */
+.bgclraddcases {
+  width: 100%;
+  position: absolute;
+  background-color: rgb(206, 89, 89);
+}
+
+.formforadd {
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
+  height: fit-content;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  border-radius: 20px;
+  background-color: rgb(231, 231, 113);
+  margin-bottom: 40px;
+}
+
+.formcontainer {
+  position: relative;
+  height: fit-content;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  row-gap: 20px;
+}
+
+.label {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  row-gap: 10px;
+}
+
+.label input[type="text"],
+.label input[type="number"],
+.label input[type="date"],
+.label textarea {
+  position: relative;
+  height: 45px;
+  width: 500px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.label textarea {
+  height: auto;
+}
+
+.label input[type="radio"] {
+  margin-right: 10px; 
+  transform: scale(1.2); 
+}
+
+.label label {
+  display: flex;
+  align-items: center; 
+}
+
+.submitforadd {
+  margin: auto;
+  width: 150px;
+}
+
+.answers {
+  color: brown;
+}
+
+/* mycase */
+
+.edit{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  a{
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    text-decoration: none;
+    border: 2px solid black;
+    column-gap: 10px;
+    border-radius: 5px;
+  }
+}
+.double{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.mycase{
+    margin: auto;
+    max-width: 80%;
+    height:fit-content;
+    background-color:grey;
+    margin-top: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    row-gap: 20px;
+    border-radius: 20px;
+  
+}
+
+.mycasecontainer{
+    position: relative;
+    margin: auto;
+    width:1000px;
+    height:fit-content;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+    background-color: rgb(202, 243, 243);
+    border-radius: 20px;
+    row-gap: 20px;
+}
+.diagnosisinfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+
+}
+.patientinfo{
+    display: flex;
+    justify-content: start;
+    align-items:start;
+    column-gap: 30px
+
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.rows{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+/* profile */
+.backgorundimg{
+  position: absolute;
+  width: 100%;
+  background-image: url("/static/images/uploads/images.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 100px;
+  z-index: 0;
+}
+.profilecontainer{
+    margin: auto;
+    margin-top: 50px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid rgb(26, 7, 196);
+    border-radius: 20px;  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    color: rgba(255, 255, 255, 0.808);
+  text-align: center;
+    z-index: 1;
+}
+.profilepage{
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    align-items: self-start;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 45px;
+     
+}
+.center{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
+  a{
+    text-decoration: none;
+    border: 2px solid black;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin-left: 15px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.808);
+  }
+}
+.rowed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+}
+.rowed h3:first-of-type {
+  color: black;
+}
+.wrongpage{
+    width: 100%;
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 30px;
+    a {
+        text-decoration: none;
+
+    }
+    
+
+}
+/* about */
+.about-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  flex-direction: column;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  row-gap: 20px;
+  h1, h2 {
+    color: #2c3e50;
+  }
+}
+
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+a {
+ 
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.repcontainer {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+}
+
+
+.report-card {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.report-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.report-card p strong {
+  color: #333;
+}
+
+/* APPOINTMENT NAVBAR */
+.appnav{
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 8px;
+    border-radius: 10px;
+    color:white;
+  }
+
+}
+
+.accept:hover{
+  transform: scale(1.1);
+  background-color: green;
+  border-radius: 10px;
+  color:whitesmoke;
+}
+.decline:hover{
+  transform: scale(1.1);
+  background-color:darkred;
+  border-radius: 10px;
+  color:whitesmoke;
+}
+/* Patient appointment page */
+/* Container for the appointment form */
+.appointmentcontainer {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #f4f4f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Label styling */
+.appointmentcontainer label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+  margin-left: 10px;
+}
+
+/* Input fields and textarea styling */
+.appointmentcontainer input[type="text"], .appointmentcontainer textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Textarea specific styling */
+.appointmentcontainer textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+/* Hover effect for input fields */
+.appointmentcontainer input[type="text"]:focus, .appointmentcontainer textarea:focus {
+  border-color: #6c63ff;
+  outline: none;
+}
+
+/* Submit button styling */
+.appointmentcontainer input[type="submit"] {
+  background-color: #6c63ff;
+  color: white;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Submit button hover effect */
+.appointmentcontainer input[type="submit"]:hover {
+  background-color: #5a54e8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .appointmentcontainer {
+      width: 90%;
+  }
+
+  .appointmentcontainer label,
+  .appointmentcontainer input[type="text"],
+  .appointmentcontainer textarea {
+      font-size: 14px;
+  }
+}
+
+/* index */
+
+.indcon{
+  position: absolute;
+  width:100%;
+  height: 680px;
+  background-image: url("/static/images/uploads/back7.jpg");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.indexcontainer {
+
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.indexcontainer h1 {
+  font-size: 3em;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.roles {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.role-card {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #e74c3c, #8e44ad);
+  color: #fff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.role-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://source.unsplash.com/random/200x200') no-repeat center center/cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.role-card h1 {
+  font-size: 1.6em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.role-card span {
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.role-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.role-card:hover h1 {
+  text-shadow: 0 0 20px #fff, 0 0 30px #3498db;
+}

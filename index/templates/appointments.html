@@ -1,0 +1,20 @@
+{%extends 'main1.html'%}
+{% block code %}
+<div class="appointmentcontainer">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="doc_id" value={{doc_id}}>
+        <label for="name">NAME</label>
+        <input type="text" name="name" value="{{patient.name}}">
+         <label for="disease_diagnosed">DISEASE DIAGNOSED</label>
+         <input type="text" name="disease_diagnosed" value="{{patient.disease_diagnosed}}">
+         <label for="date">Date</label>
+         <input type="text" name="date">
+         <label for="time">Time</label>
+         <input type="text" name="time">
+         <label for="desc">Your Message to the Doctor</label>
+         <textarea name="desc" rows="4" cols="50"></textarea>
+         <input type="submit">
+    </form>
+</div>
+{% endblock code %}
