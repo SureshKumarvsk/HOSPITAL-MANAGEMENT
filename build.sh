@@ -9,8 +9,7 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate --noinput
 
-# Collect static files (important for production)
-python manage.py collectstatic --noinput
+
 
 
 
