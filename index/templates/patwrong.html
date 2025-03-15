@@ -1,0 +1,8 @@
+{% load static %}
+{% block code %}
+<div class="wrongpage" style="display: flex;justify-content: center;
+    align-items: center; flex-direction: column; row-gap: 20px; border: 5px solid black; width: fit-content;margin: auto;margin-top: 250px;padding: 30px; border-radius: 10px;">
+<h1>HI {{loginname}} you have entered wrong information please login correctly</h1>
+<a href="{% url 'loginpat' %}">Login again</a>
+</div>
+{% endblock code %}

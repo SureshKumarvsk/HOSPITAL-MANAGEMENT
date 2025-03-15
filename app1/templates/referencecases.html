@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+
+{% block code %}
+<div class="mycase">
+    <form action="">
+        <input type="text" placeholder="search" name="search" style="width: 300px; height: 40px; font-size: 16px; text-align: center; border-radius: 10px;" >
+        <input type="submit" value="Search" style="height: 40px;width:100px; border-radius: 10px;" >
+    </form>
+    {% if match %}
+    <h1>No match found</h1>
+    {% else %}
+    {% for i in data %}
+    <div class="mycasecontainer">
+        <h1>DIAGNOSIS INFO</h1>
+        <div class="diagnosisinfo">
+            <div class="row">
+                <h3>Disease Diagnosed </h3>
+            {{i.disease_diagnosed}}
+        </div>
+        <div class="row">
+            <h3>Case Details</h3>
+            {{i.case_details}}
+        </div>
+        <div class="row">
+            <h3>Medications</h3>
+            {{i.medications}}
+        </div>
+        </div>
+        <h1>PATIENT INFO</h1>
+        <div class="patientinfo">
+            <div class="rows">
+            <h3>NAME</h3>
+            {{i.name}}
+        </div>
+        <div class="rows"></div>
+            <h3>AGE</h3>
+            {{i.age}}
+            <div class="rows">
+                <h3>GENDER</h3>
+            {{i.gender}}
+        </div>
+        
+            <div class="rows">
+                <h3>CONTACT</h3>
+            {{i.contact}}
+        </div>
+            <div class="rows">
+                <h3>ADDRESS</h3>
+            {{i.address}}
+        </div>
+        </div>
+            <div class="rows">
+                <h3>DOCTOR</h3>
+            {{i.doctor}}
+        </div>
+        </div>
+
+    {% endfor%}
+
+</div>  
+    {% endif %}
+   
+{% endblock code %}

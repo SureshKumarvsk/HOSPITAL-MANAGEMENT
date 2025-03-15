@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+
+{% block code %}
+<div class="bgclraddcases">
+<div class="formforadd">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="formcontainer">
+        <!-- Name -->
+        <div class="label">
+            <h2>Name:</h2>
+            <input type="text" name="name" value="{{ data.name }}" required>
+        </div>
+        
+        <!-- Age -->
+        <div class="label">
+            <h2>Age:</h2>
+            <input type="number" name="age" value="{{data.age}}" readonly>
+        </div>
+
+        <!-- Gender -->
+<div class="label">
+    <h2>Gender:</h2>
+    <label><input type="radio" name="gender" value="Male" {% if data.gender == "Male" %}checked{% endif %}> Male</label>
+    <label><input type="radio" name="gender" value="Female" {% if data.gender == "Female" %}checked{% endif %}> Female</label>
+    <label><input type="radio" name="gender" value="Other" {% if data.gender == "Other" %}checked{% endif %}> Other</label>
+</div>
+
+        
+        
+        
+        <!-- Contact -->
+        <div class="label">
+            <h2>Contact:</h2>
+            <input type="number" name="contact" value={{data.contact}} >
+        </div>
+        
+        <!-- Address -->
+        <div class="label">
+            <h2>Address:</h2>
+            <textarea name="address" rows="3" required>{{ data.address }}</textarea>
+        </div>
+        
+        <!-- Date -->
+        <div class="label">
+            <h2>Date:</h2>
+            <input type="date" name="date" value="{{ data.date }}" required>
+        </div>
+        
+        <!-- Disease Diagnosed -->
+        <div class="label">
+            <h2>Disease Diagnosed:</h2>
+            <input type="text" name="disease_diagnosed" value="{{ data.disease_diagnosed }}" required>
+        </div>
+        
+        <!-- Case Details -->
+        <div class="label">
+            <h2>Case Details:</h2>
+            <textarea name="case_details" rows="5" required>{{ data.case_details }}</textarea>
+        </div>
+        
+        <!-- Medications -->
+        <div class="label">
+            <h2>Medications:</h2>
+            <textarea name="medications" rows="5" required>{{ data.medications }}</textarea>
+        </div>
+    </div>
+        <!-- Submit Button -->
+        <center class="submitforadd">
+            <input type="submit" value="Submit">
+        </center>
+    </form>
+</div>
+</div>
+{% endblock code %}

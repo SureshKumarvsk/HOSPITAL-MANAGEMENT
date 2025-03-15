@@ -1,0 +1,9 @@
+{% load static %}
+{% block code %}
+<div class="wrongpage" style="display: flex;justify-content: center;
+    align-items: center; flex-direction: column; row-gap: 20px; border: 5px solid black; width: fit-content;margin: auto;margin-top: 250px;padding: 30px; border-radius: 10px;">
+<h1>Hi {{data.patient_name}} your appointment on {{data.date}} at {{data.time}} is Declined.and He said{{data.message_to_doctor}}</h1>
+<a href="{% url 'report' %}">GO TO HOMEPAGE</a>
+<a href="{% url 'newappointment'%}">New appointment</a>
+</div>
+{% endblock code %}

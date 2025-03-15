@@ -1,0 +1,17 @@
+<nav>
+    <div class="title">
+        <h1>V.S.K HOSPITALS - PATIENTS</h1>
+    </div>
+    <div class="links">
+        {% if request.session.patient_id %}
+            <a href="{% url 'report'%}">REPORT</a>
+            <a href="{% url 'addpatdetials'%}">ADD YOUR DETIALS</a>
+            <a href="{% url 'appointments' %}">APPOINTMENTS</a>
+            <a href="{% url 'patlogout' %}">LOGOUT</a>
+        {% else %}
+            <a href="{% url 'loginpat' %}">LOGIN</a>
+            <a href="{% url 'reginpat' %}">REGISTER</a>
+            <a href="{% url 'patabout' %}">ABOUT</a>
+        {% endif %}
+    </div>
+</nav>

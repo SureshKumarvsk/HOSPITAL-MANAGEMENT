@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+
+{% block code %}
+<div class="mycase">
+    
+    {% for i in data %}
+    <div class="mycasecontainer">
+        <div class="edit">
+            <h1>DIAGNOSIS INFO</h1>
+            <div class="double">
+            <a href="{% url 'editformycases' i.id %}">Edit</a>
+            <a href="{% url 'delformycases' i.id %}">delete</a>
+        </div>
+            </div>
+        <div class="diagnosisinfo">
+            <div class="row">
+                <h3>Disease Diagnosed</h3>
+                 <div class="answers">
+                    {{i.disease_diagnosed}}
+                 </div>
+            </div>
+            <div class="row">
+                <h3>Case Details</h3>
+                <div class="answers">
+                    {{i.case_details}}
+                </div> 
+            </div>
+            <div class="row">
+                <h3>Medications</h3>
+                <div class="answers">
+                    {{i.medications}}
+                </div>
+                
+            </div>
+        </div>
+        <h1>PATIENT INFO</h1>
+        <div class="patientinfo">
+            <div class="rows">
+            <h3>NAME</h3>
+            <div class="answers">
+                {{i.name}}
+            </div>
+            
+        </div>
+        <div class="rows"></div>
+            <h3>AGE</h3>
+            {{i.age}}
+            <div class="rows">
+                <h3>GENDER</h3>
+                <div class="answers">
+                    {{i.gender}}
+                </div>
+            
+        </div>
+        
+            <div class="rows">
+                <h3>CONTACT</h3>
+                <div class="answers">
+                    {{i.contact}}
+                </div>
+        </div>
+            <div class="rows">
+                <h3>ADDRESS</h3>
+                <div class="answers">
+                    {{i.address}}
+                </div> 
+        </div>
+        </div>
+</div>
+    {% endfor%}
+</div>
+{% endblock code %}

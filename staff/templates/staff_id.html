@@ -1,0 +1,65 @@
+{% extends 'main2.html' %}
+
+{% block code %}
+
+<div class="mycase">
+    <div class="appnav">
+    <div class="accept">
+        <a href="{% url 'Acceptd' doctor %}">Accept all</a>
+    </div>
+    <div class="decline">
+        <a href="{% url 'Declined' doctor %}">decline all</a>
+    </div>
+    <div class="accept">
+        <a href="{% url 'Acceptedd' %}">Accepted</a>
+    </div>
+    <div class="decline">
+        <a href="{% url 'Declinedd' %}">Declined</a>
+    </div>
+</div>
+    {% for i in data %}
+    <div class="mycasecontainer">
+        <div class="edit">
+            <h1>DIAGNOSIS INFO</h1>
+            <div class="double">
+                <div class="double">
+                    <a href="{% url 'smallAcceptd' i.id %}">Accept</a>
+                    <a href="{% url 'smalldeclined' i.id %}">Decline</a>
+                </div>
+                
+        </div>
+            </div>
+        <div class="row">
+            <h3>PatientName</h3>
+            {{i.patient_name}}
+        </div>
+            <div class="row">
+                <h3>Disease Diagnosed </h3>
+            {{i.disease_diagnosed}}
+        </div>
+        <div class="row">
+            <h3>Date</h3>
+            {{i.date}}
+        </div>
+        <div class="rows">
+            <h3>time</h3>
+            {{i.time}}
+        </div>
+            
+            <div class="rows">
+                <h3>Message</h3>
+            {{i.message_to_doctor}}
+        </div>
+       
+
+        
+        </div>
+        {% endfor%}
+
+        </div>
+
+   
+
+
+   
+{% endblock code %}

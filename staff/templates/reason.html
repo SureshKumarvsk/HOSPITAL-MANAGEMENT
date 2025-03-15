@@ -1,0 +1,21 @@
+{% extends 'main2.html'%}
+
+{% block code %}
+<div class="appointmentcontainer">
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <label for="name">NAME</label>
+        <input type="text" name="name" value="{{patient.patient_name}}">
+         <label for="disease_diagnosed">DISEASE DIAGNOSED</label>
+         <input type="text" name="disease_diagnosed" value="{{patient.disease_diagnosed}}">
+         <label for="date"> Date</label>
+         <input type="text" name="date" value="{{patient.date}}">
+         <label for="time">Reschedule Time</label>
+         <input type="text" name="time" value="{{patient.time}}">
+         <label for="desc">Reason To Decline Appointment</label>
+         <textarea name="desc" rows="4" cols="50"></textarea>
+         <input type="submit">
+    </form>
+</div>
+{% endblock code %}

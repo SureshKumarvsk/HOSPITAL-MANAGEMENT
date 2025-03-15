@@ -1,0 +1,19 @@
+<nav>
+    <div class="title">
+        <h1>V.S.K HOSPITALS</h1>
+    </div>
+    <div class="links">
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'addcases'%}">APPOINTMENTS( {{request.user.last_name}})</a>
+            <a href="{% url 'mycases'%}">MY CASES</a>
+            <a href="{% url 'referencecases'%}">REFERENCE CASES</a>
+            <a href="{% url 'profile'%}">PROFILE (DR.{{request.user}})</a>
+            <a href="{%url 'logoutt'%}">LOGOUT</a>
+            
+        {% else %}
+        <a href="{%url 'loginn' %}">LOGIN</a>
+        <a href="{%url 'register' %}">REGISTER</a>
+        <a href="{%url 'about' %}">ABOUT</a>
+        {% endif %}
+</div>
+</nav>

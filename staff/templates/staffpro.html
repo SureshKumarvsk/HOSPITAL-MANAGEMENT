@@ -1,0 +1,51 @@
+{% extends 'main2.html'%}
+
+{% block code %}
+<div class="backgorundimg">
+<div class="profilecontainer">
+    <div class="profilepage">
+        <div class="center">
+        <h1>{{data.name}}</h1>
+        <img src="{{ data.image.url }}" alt="Profile Image" width="200px" height="200px" style="object-fit: cover; border-radius: 50%;">
+    </div>
+    <div class="rowed">
+        <h3>DATE OF BIRTH:</h3>
+        <h3>{{ data.DateOfBirth }}</h3>
+    </div>
+    <div class="rowed">
+        <h3>AGE:</h3>
+        <h3>{{ data.age }}</h3>
+    </div>
+    <div class="rowed">
+        <h3>GENDER:</h3>
+        <h3>{{ data.gender }}</h3>
+    </div>
+        <div class="rowed">
+            <h3>EMAIL ID:</h3>
+            <h3>{{ data.email }}</h3>
+        </div>
+        
+
+        <div class="rowed">
+            <h3>CONTACT:</h3>
+            <h3>{{ data.contact }}</h3>
+        </div>
+        <div class="rowed">
+            <h3>ADDRESS:</h3>
+            <h3>{{ data.address }}</h3>
+        </div>
+        <div class="rowed">
+            <h3>DESIGNATION:</h3>
+            <h3>{{ data.Designation }}</h3>
+        </div>
+        <div class="rowed">
+            <h3>EXPERIENCE:</h3>
+            <h3>{{ data.experience }} years</h3>
+        </div>
+        <div class="center">
+            <a href="{% url 'staffaddDetials' data.id %}"><h2>Add Detials</h2></a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock code %}

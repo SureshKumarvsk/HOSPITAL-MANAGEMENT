@@ -1,0 +1,9 @@
+{% extends 'main2.html' %}
+{%block code%}
+
+{% for i in data %}
+<a href="{% url 'staff_id' i.id %}">{{i.username}}</a>
+
+{% endfor %}
+
+{%endblock code%}

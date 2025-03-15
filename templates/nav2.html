@@ -1,0 +1,19 @@
+<nav>
+    <div class="title">
+        <h1>V.S.K HOSPITALS - STAFF</h1>
+    </div>
+    <div class="links">
+        {% if request.session.staff_id %}
+            <a href="{% url 'staff_appo' %}">APPOINTMENTS</a>
+            <a href="{% url 'staffpro' %}" style="text-transform: uppercase; display: flex; align-items: center;  text-align: center;">
+                <img src="/static/images/uploads/profile-removebg-preview2.png" alt="Profile" style="width: 20px; height: 20px; background-color: transparent; border: none; margin-right: 8px;">
+                {{ request.session.staff_name }}
+            </a>
+            <a href="{% url 'logout_staff' %}">LOGOUT</a>
+        {% else %}
+            <a href="{% url 'login_staff' %}">LOGIN</a>
+            <a href="{% url 'register_staff' %}">REGISTER</a>
+            <a href="{% url 'staff_about' %}">ABOUT</a>
+        {% endif %}
+    </div>
+</nav>
